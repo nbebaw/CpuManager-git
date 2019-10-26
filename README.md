@@ -1,1 +1,2 @@
-This is a tool to help you to control your CPU. You can with this tool your CPU Turbo Boost turn off and on. This is a bash-program and need sudo to work correctly.
+This is a tool to help you to control your CPU. 
+You can turn off and on your CPU turbo Boost. It is a bash-program and need root privileges to work correctly.
