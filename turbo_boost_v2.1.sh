@@ -1,19 +1,22 @@
 #!/bin/bash
 #Created by Nader
 #This program created to help you to turn your turbo boost off and on.
+#EUID: is for root privilige. So if this program ran with sudo, then thie variable will be 0. Otherwise will be 1000
 if [[ $EUID -ne 0 ]]; then
         RED='\033[0;31m'	
 	echo -e "${RED}This script must be run as root."
 	exit 1
 fi
+#Choose
 echo "Turbo Boost"
 echo "1- Turn off"
 echo "2- Turn on"
 read -p "Your choice:" choice
-look_at=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo) 
+look_at=$(cat /sys/devices/system/cpu/intel_pstate/no_turbo)
+#package check if zenity installed
 package=$(pacman -Q zenity)
 
-#check if zenity is installed 
+#if zenity not installed, then it will be installed
 if [[ $? -ne 0 ]]
 then 
 	RED='\033[0;31m'
