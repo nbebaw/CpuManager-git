@@ -1,7 +1,11 @@
 #!/bin/bash
 #Created by Nader
-#This program created to help you to turn your turbo boost off and on. 
-echo "You have to run this program with sudo"
+#This program created to help you to turn your turbo boost off and on.
+if [[ $EUID -ne 0 ]]; then
+        RED='\033[0;31m'	
+	echo -e "${RED}This script must be run as root." 2>&1
+	exit 1
+fi
 echo "Turbo Boost"
 echo "1- Turn off"
 echo "2- Turn on"
