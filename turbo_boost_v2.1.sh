@@ -3,7 +3,7 @@
 #This program created to help you to turn your turbo boost off and on.
 if [[ $EUID -ne 0 ]]; then
         RED='\033[0;31m'	
-	echo -e "${RED}This script must be run as root." 2>&1
+	echo -e "${RED}This script must be run as root."
 	exit 1
 fi
 echo "Turbo Boost"
